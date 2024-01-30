@@ -1,4 +1,6 @@
+import { ScButton } from "./components/Button";
 import { Card } from "./components/Card";
+import { Filter } from "./components/Filter";
 import { SearchBox } from "./components/SearchBox";
 import { ScContainer } from "./components/System";
 import { foods } from "./mocks";
@@ -22,6 +24,7 @@ const ScList = styled.div`
   flex-wrap: wrap;
   margin-left: -12px;
   margin-right: -12px;
+  margin-bottom: 2rem;
 `;
 
 const ScListItem = styled.div`
@@ -35,6 +38,12 @@ const ScListItem = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
+const ScLoadMore = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 function App() {
   return (
     <div>
@@ -43,6 +52,8 @@ function App() {
       </ScHeader>
 
       <SearchBox />
+
+      <Filter />
 
       <ScBody>
         <ScContainer>
@@ -53,6 +64,10 @@ function App() {
               </ScListItem>
             ))}
           </ScList>
+
+          <ScLoadMore>
+            <ScButton>+ Show More</ScButton>
+          </ScLoadMore>
         </ScContainer>
       </ScBody>
     </div>
