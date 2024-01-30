@@ -1,20 +1,55 @@
+import { Card } from "./components/Card";
 import { ScContainer } from "./components/System";
+import { foods } from "./mocks";
+import styled from "styled-components";
+
+const ScHeader = styled.header`
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  font-weight: bold;
+`;
+
+const ScBody = styled.div`
+  margin-bottom: 8rem;
+`;
+
+const ScList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+`;
+
+const ScListItem = styled.div`
+  width: calc(33.3% - 24px);
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+`;
 
 function App() {
   return (
     <div>
-      <ScContainer>
-        <p>
-          Nulla quis elit eiusmod cupidatat sint sit reprehenderit reprehenderit
-          proident commodo ullamco ea. Quis laborum sit consectetur dolor
-          deserunt exercitation pariatur. Incididunt sit labore et veniam in
-          elit duis incididunt sit id aliqua laborum proident. Fugiat ea dolor
-          ad anim in in anim occaecat ut dolore. Dolore dolore pariatur ullamco
-          magna velit esse cupidatat. Occaecat tempor occaecat deserunt dolor ea
-          non aliquip laborum. Exercitation voluptate proident minim cillum
-          commodo.
-        </p>
-      </ScContainer>
+      <ScHeader>
+        <ScContainer>Wego Foods</ScContainer>
+      </ScHeader>
+
+      <ScBody>
+        <ScContainer>
+          <ScList>
+            {foods.map((i) => (
+              <ScListItem>
+                <Card item={i} key={i.id} />
+              </ScListItem>
+            ))}
+          </ScList>
+        </ScContainer>
+      </ScBody>
     </div>
   );
 }
