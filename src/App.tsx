@@ -1,13 +1,16 @@
 import { Card } from "./components/Card";
+import { SearchBox } from "./components/SearchBox";
 import { ScContainer } from "./components/System";
 import { foods } from "./mocks";
 import styled from "styled-components";
 
 const ScHeader = styled.header`
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-bottom: 24px;
   font-weight: bold;
+  height: 72px;
+  line-height: 72px;
+  font-size: 24px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid gray;
 `;
 
 const ScBody = styled.div`
@@ -36,8 +39,10 @@ function App() {
   return (
     <div>
       <ScHeader>
-        <ScContainer>Wego Foods</ScContainer>
+        <ScContainer>WegoFoods</ScContainer>
       </ScHeader>
+
+      <SearchBox />
 
       <ScBody>
         <ScContainer>
