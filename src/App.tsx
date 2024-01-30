@@ -11,8 +11,8 @@ const ScHeader = styled.header`
   height: 72px;
   line-height: 72px;
   font-size: 24px;
-  margin-bottom: 2rem;
   border-bottom: 1px solid gray;
+  margin-bottom: 3rem;
 `;
 
 const ScBody = styled.div`

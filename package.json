@@ -22,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "release": "yarn run build && surge ./build https://wego-foods.surge.sh",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
