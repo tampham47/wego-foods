@@ -77,7 +77,7 @@ export const Card = ({ item }: { item: Food }) => {
         <ScCover src={item.imageUrl} />
       </ScCoverWrapper>
       <ScBody>
-        <ScTitle>{item.restaurant}</ScTitle>
+        <ScTitle>{item.name}</ScTitle>
         <ScInfoList>
           <ScBadge>
             <Star size={13} /> {item.rating.toFixed(1)}

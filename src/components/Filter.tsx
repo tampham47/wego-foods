@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { ScContainer } from "./System";
+import { Category } from "../types/Category";
+import useAppDispatch from "../hooks/useAppDispatch";
+import { setSelectedCategoryId } from "../reducers/system";
 
 const ScMain = styled.div`
   margin-bottom: 3rem;
@@ -38,20 +41,34 @@ const ScButton = styled.button`
   }
 `;
 
-export const Filter = () => {
+export const Filter = ({
+  data,
+  selectedCategoryId,
+}: {
+  data: Category[];
+  selectedCategoryId: string;
+}) => {
+  const dispatch = useAppDispatch();
+
   return (
     <ScMain>
       <ScContainer>
         <ScBody>
-          <ScButton onClick={() => null} className="active">
+          <ScButton
+            onClick={() => dispatch(setSelectedCategoryId(""))}
+            className={selectedCategoryId === "" ? "active" : ""}
+          >
             All
           </ScButton>
-          <ScButton onClick={() => null}>Sushi</ScButton>
-          <ScButton onClick={() => null}>Pizza</ScButton>
-          <ScButton onClick={() => null}>Burgers</ScButton>
-          <ScButton onClick={() => null}>Hot Meals</ScButton>
-          <ScButton onClick={() => null}>Desserts</ScButton>
-          <ScButton onClick={() => null}>Drinks</ScButton>
+          {data.map((i) => (
+            <ScButton
+              key={i.id}
+              onClick={() => dispatch(setSelectedCategoryId(i.id))}
+              className={selectedCategoryId === i.id ? "active" : ""}
+            >
+              {i.name}
+            </ScButton>
+          ))}
         </ScBody>
       </ScContainer>
     </ScMain>

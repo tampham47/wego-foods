@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { Search } from "react-feather";
 
 import { ScContainer } from "./System";
-import { Search } from "react-feather";
+import useAppDispatch from "../hooks/useAppDispatch";
+import { setSearch } from "../reducers/system";
 
 const ScMain = styled.div`
   margin-bottom: 3rem;
@@ -43,7 +45,9 @@ const ScInput = styled.input`
   }
 `;
 
-export const SearchBox = () => {
+export const SearchBox = ({ search }: { search: string }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <ScMain>
       <ScContainer>
@@ -51,7 +55,13 @@ export const SearchBox = () => {
           <ScInputIcon>
             <Search size={24} />
           </ScInputIcon>
-          <ScInput placeholder="Enter restaurant name..." />
+          <ScInput
+            placeholder="Enter restaurant name..."
+            value={search}
+            onChange={(e) => {
+              dispatch(setSearch(e.target.value));
+            }}
+          />
         </ScInputWrapper>
       </ScContainer>
     </ScMain>
