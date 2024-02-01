@@ -7,6 +7,8 @@ import { RootState } from "./store";
 import useAppSelector from "./hooks/useAppSelector";
 import WegoFoods from "./WegoFoods";
 
+import "@johanaarstein/dotlottie-player";
+
 const ScHeader = styled.header`
   font-weight: bold;
   height: 72px;
@@ -26,6 +28,12 @@ const ScLogo = styled.span`
 `;
 const ScFoods = styled.span`
   color: #d04848;
+`;
+
+const ScLoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const selector = (state: RootState) => {
@@ -53,7 +61,18 @@ function App() {
         <WegoFoods />
       ) : (
         <ScContainer>
-          <div>Loading...</div>
+          <ScLoadingContainer>
+            <dotlottie-player
+              src="/content/food-prepare.json"
+              background="transparent"
+              style={{ width: 480, height: 480 }}
+              speed={1}
+              direction={1}
+              play-mode="normal"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </ScLoadingContainer>
         </ScContainer>
       )}
     </div>
