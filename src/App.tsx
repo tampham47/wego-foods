@@ -12,8 +12,20 @@ const ScHeader = styled.header`
   height: 72px;
   line-height: 72px;
   font-size: 24px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #e8c872;
   margin-bottom: 3rem;
+`;
+
+const ScLogo = styled.span`
+  display: inline-block;
+  background-color: #ffc700;
+  line-height: 36px;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: bold;
+`;
+const ScFoods = styled.span`
+  color: #d04848;
 `;
 
 const selector = (state: RootState) => {
@@ -30,7 +42,11 @@ function App() {
   return (
     <div>
       <ScHeader>
-        <ScContainer>WegoFoods</ScContainer>
+        <ScContainer>
+          <ScLogo>
+            Wego<ScFoods>Foods</ScFoods>
+          </ScLogo>
+        </ScContainer>
       </ScHeader>
 
       {appReady ? (
