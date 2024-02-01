@@ -34,6 +34,7 @@ const ScListItem = styled.div`
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-bottom: 0.75rem;
+  transition: all 0.25s;
 
   @media screen and (min-width: 600px) {
     width: calc(50% - 24px);
@@ -42,6 +43,10 @@ const ScListItem = styled.div`
   @media screen and (min-width: 920px) {
     width: calc(33.3% - 24px);
     margin-bottom: 1rem;
+  }
+
+  &:hover {
+    transform: translate(6px, -6px);
   }
 `;
 
