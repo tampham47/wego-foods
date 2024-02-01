@@ -26,14 +26,23 @@ const ScList = styled.div`
 `;
 
 const ScListItem = styled.div`
-  width: calc(33.3% - 24px);
+  width: calc(100% - 24px);
   margin-left: 12px;
   margin-right: 12px;
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 24px;
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 0.75rem;
+
+  @media screen and (min-width: 600px) {
+    width: calc(50% - 24px);
+  }
+
+  @media screen and (min-width: 920px) {
+    width: calc(33.3% - 24px);
+    margin-bottom: 1rem;
+  }
 `;
 
 const ScLoadMore = styled.div`

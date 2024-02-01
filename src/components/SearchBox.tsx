@@ -6,14 +6,21 @@ import useAppDispatch from "../hooks/useAppDispatch";
 import { setSearch } from "../reducers/system";
 
 const ScMain = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
+
+  @media screen and (min-width: 920px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const ScInputWrapper = styled.div`
   color: #8b939b;
   position: relative;
   height: 48px;
-  width: 400px;
+
+  @media screen and (min-width: 920px) {
+    width: 400px;
+  }
 `;
 
 const ScInputIcon = styled.div`
